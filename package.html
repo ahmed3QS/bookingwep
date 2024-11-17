@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حجز موعد</title>
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>حجز موعد</h1>
+
+    <div class="selected-package">
+      <h2>الباقة المختارة</h2>
+      <p id="packageName">اسم الباقة: غير محدد</p>
+      <p id="packagePrice">السعر: غير محدد</p>
+    </div>
+
+    <form id="bookingForm">
+      <label for="name">الاسم</label>
+      <input type="text" id="name" name="name" required>
+    
+      <label for="phone">الجوال</label>
+      <input type="text" id="phone" name="phone" required>
+    
+      <label for="region">المنطقة</label>
+      <select id="region" name="region" required>
+        <option value="الرياض">الرياض</option>
+        <option value="جدة">جدة</option>
+        <option value="الدمام">الدمام</option>
+        <!-- المزيد من المناطق -->
+      </select>
+    
+      <label for="carType">نوع السيارة</label>
+      <select id="carType" name="carType" required>
+        <option value="تويوتا">تويوتا</option>
+        <option value="هوندا">هوندا</option>
+        <option value="هونداي">هونداي</option>
+      </select>
+    
+      <label for="carModel">موديل السيارة</label>
+      <input type="number" id="carModel" name="carModel" min="1900" max="2025" required>
+    
+      <label for="date">تاريخ الحجز</label>
+      <input type="date" id="date" name="date" required>
+    
+      <label for="time">وقت الحجز</label>
+      <input type="time" id="time" name="time" required>
+    
+      <label for="notes">ملاحظات</label>
+      <textarea id="notes" name="notes"></textarea>
+    
+      <button type="submit">تأكيد الحجز</button>
+    </form>
+  </div>
+
+  <script src="js.js"></script>
+  <script>
+    // جلب البيانات من localStorage
+    const selectedPackage = JSON.parse(localStorage.getItem("selectedPackage"));
+
+    if (selectedPackage) {
+      document.getElementById("packageName").textContent = "اسم الباقة: " + selectedPackage.name;
+      document.getElementById("packagePrice").textContent = "السعر: " + selectedPackage.price + " ريال";
+    }
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // منع الإرسال الفعلي للنموذج
+
+  // جلب البيانات من النموذج
+  const bookingData = {
+    name: document.getElementById('name').value,
+    phone: document.getElementById('phone').value,
+    region: document.getElementById('region').value,
+    carType: document.getElementById('carType').value,
+    carModel: document.getElementById('carModel').value,
+    date: document.getElementById('date').value,
+    time: document.getElementById('time').value,
+    notes: document.getElementById('notes').value
+  };
+
+  // حفظ البيانات في LocalStorage
+  localStorage.setItem('bookingData', JSON.stringify(bookingData));
+
+  // الانتقال إلى صفحة التأكيد
+  window.location.href = 'confirmation.html'; // تأكد من أن الرابط يتوافق مع الصفحة الفعلية
+});
+
+  </script>
+
+</body>
+</html>

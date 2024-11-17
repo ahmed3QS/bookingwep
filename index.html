@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اختيار الباقة</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px 0;
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .packages {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+      gap: 20px;
+    }
+
+    .package {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .package:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .package h2 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .package p {
+      color: #666;
+      font-size: 18px;
+    }
+
+    .package:nth-child(1) {
+      background-color: #f1f1f1;
+    }
+
+    .package:nth-child(2) {
+      background-color: #e2f1f8;
+    }
+
+    .package:nth-child(3) {
+      background-color: #fff5e1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>اختيار الباقة</h1>
+
+  <div class="packages">
+    <div class="package" onclick="selectPackage('أساسية', 1500)">
+      <h2>الباقة الأساسية</h2>
+      <p>السعر: 1500 ريال</p>
+    </div>
+    <div class="package" onclick="selectPackage('فضية', 1000)">
+      <h2>الباقة الفضية</h2>
+      <p>السعر: 1000 ريال</p>
+    </div>
+    <div class="package" onclick="selectPackage('ذهبية', 500)">
+      <h2>الباقة الذهبية</h2>
+      <p>السعر: 500 ريال</p>
+    </div>
+  </div>
+
+  <script>
+    function selectPackage(name, price) {
+      // تخزين اسم الباقة والسعر في localStorage
+      localStorage.setItem("selectedPackage", JSON.stringify({ name, price }));
+      // الانتقال إلى صفحة الحجز
+      window.location.href = "package.html";
+    }
+  </script>
+  
+</body>
+</html>

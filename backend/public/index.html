@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حجز موعد</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>حجز موعد</h1>
+    <form id="bookingForm">
+      <label for="name">الاسم</label>
+      <input type="text" id="name" name="name" required>
+    
+      <label for="phone">الجوال</label>
+      <input type="text" id="phone" name="phone" required>
+    
+      <label for="region">المنطقة</label>
+      <select id="region" name="region" required>
+        <option value="الرياض">الرياض</option>
+        <option value="جدة">جدة</option>
+        <option value="الدمام">الدمام</option>
+        <!-- المزيد من المناطق -->
+      </select>
+    
+      <label for="carType">نوع السيارة</label>
+      <select id="carType" name="carType" required>
+        <option value="تويوتا">تويوتا</option>
+        <option value="هوندا">هوندا</option>
+        <option value="هونداي">هونداي</option>
+      </select>
+    
+      <label for="carModel">موديل السيارة</label>
+      <input type="number" id="carModel" name="carModel" min="1900" max="2025" required>
+    
+      <label for="date">تاريخ الحجز</label>
+      <input type="date" id="date" name="date" required>
+    
+      <label for="time">وقت الحجز</label>
+      <input type="time" id="time" name="time" required>
+    
+      <label for="notes">ملاحظات</label>
+      <textarea id="notes" name="notes"></textarea>
+    
+      <button type="submit">تأكيد الحجز</button>
+    </form>
+    
+  </div>
+
+  <script src="js.js"></script>
+</body>
+</html>

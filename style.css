@@ -1,0 +1,126 @@
+/* تنسيقات الصفحة العامة */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #eaf2f7; /* لون خلفية ناعم */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  direction: rtl; /* النصوص من اليمين إلى اليسار */
+}
+
+/* تهيئة الشكل العام للصندوق */
+.container {
+  max-width: 750px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+  border-top: 5px solid #4CAF50; /* شريط علوي */
+}
+
+/* عنوان الصفحة */
+h1 {
+  text-align: center;
+  color: #4CAF50;
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/* تسمية الحقول */
+label {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 6px;
+  display: block;
+  text-align: right;
+}
+
+/* المدخلات العامة */
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  text-align: right;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #4CAF50; /* تغيير لون الإطار عند التحديد */
+  outline: none;
+}
+
+/* زر تأكيد الحجز */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3e9442;
+}
+
+/* مربع ملاحظات الحجز */
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.selected-package {
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: #f0f8f5; /* لون خلفية ناعم */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.selected-package h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.selected-package p {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  margin: 5px 0;
+}
+
+/* عناصر التاريخ والوقت */
+input[type="date"],
+input[type="time"] {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+}

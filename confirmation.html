@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل الحجز</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* تنسيقات الصفحة */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgb(0, 255, 21);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      color: #04dd28;
+      margin-bottom: 20px;
+    }
+    h4 {
+      text-align: center;
+      color: #58725c;
+      margin-bottom: 20px;
+    }
+
+    .booking-detail {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .booking-detail strong {
+      color: #555;
+    }
+
+    #noDataMessage {
+      text-align: center;
+      color: #999;
+      font-size: 16px;
+    }
+
+    /* التنسيق للهواتف */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+      .booking-detail {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>تفاصيل الحجز</h1>
+    <h4>تم حجز موعد في </h4>
+    <div id="bookingDetails"></div>
+  </div>
+
+  <script src="confirmation.js"></script>
+</body>
+</html>
